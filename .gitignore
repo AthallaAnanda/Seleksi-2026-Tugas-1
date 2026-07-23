@@ -17,11 +17,13 @@ logs/
 
 # Claude Code (AI tooling) - personal/local, jangan di-commit
 .claude/settings.local.json
+.claude/skills/
 CLAUDE.local.md
 
 # Catatan perencanaan internal, tidak untuk dikumpulkan
 docs/rencana-implementasi.md
 docs/panduan-implementasi.md
+docs/snapshot-anomali.md
 
 # Dump mentah DevTools, bukan bagian dari deliverable
 docs/HailDevToolsPasarDana.txt

@@ -23,7 +23,7 @@
 11. [Penggunaan AI](#11-penggunaan-ai)
 12. [Referensi](#12-referensi)
 
-Dokumen ini merupakan README utama untuk submission. Catatan anomali data portofolio yang lebih rinci tersedia pada `docs/snapshot-anomali.md`.
+Dokumen ini merupakan README utama untuk submission.
 
 ---
 
@@ -416,7 +416,7 @@ Beberapa hal sengaja tidak ditutup karena cakupan tugas ini adalah pemodelan bas
 
 - **Tidak ada penanganan revisi data sumber.** Apabila pasardana merevisi NAV historis setelah proses scrape, model ini tidak akan menangkap revisi tersebut pada OLTP. Pada data warehouse, riwayat perubahan atribut dimensi tetap tertangkap melalui SCD Type 2.
 - **Tidak ada pelacakan siklus hidup fund**, sehingga analisis yang hanya mengambil fund aktif berpotensi mengalami survivorship bias, yaitu bias akibat fund berkinerja buruk cenderung lebih dulu tutup atau merger.
-- **Sebagian snapshot portofolio totalnya tidak persis 100%.** Hal ini murni merupakan masalah data dari sumbernya, bukan kesalahan pada pipeline. Rinciannya tersedia pada `docs/snapshot-anomali.md`.
+- **Sebagian snapshot portofolio totalnya tidak persis 100%.** Hal ini murni merupakan masalah data dari sumbernya, bukan kesalahan pada pipeline.
 
 Sebagian celah di atas ditutup melalui mekanisme lain. Tabel `audit_log` (melalui trigger pada OLTP) mencatat perubahan data master, sedangkan SCD Type 2 pada Data Warehouse (bagian 9.1) menyimpan riwayat atribut dimensi dari waktu ke waktu.
 
