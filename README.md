@@ -437,12 +437,12 @@ Sesuai ketentuan spesifikasi, berikut penjelasan penggunaan AI dalam pengerjaan 
 
 ### 3. Refleksi penggunaan AI
 
-AI banyak membantu mempercepat bagian implementasi, yaitu penulisan boilerplate script Python, DDL, query SQL, dan penyusunan dokumentasi, sehingga waktu dapat lebih difokuskan pada riset endpoint dan pengambilan keputusan desain database. Meskipun demikian, hasil dari AI tetap perlu diverifikasi ke data dan sistem yang sebenarnya, tidak diterima begitu saja. Sebagai contoh konkret, salah satu bukti query optimasi (optimasi 2) yang sempat dianggap selesai ternyata tidak valid setelah diperiksa ulang, karena index pembandingnya telah terpasang lebih dulu dari percobaan sebelumnya sehingga baseline "sebelum" dan "sesudah" sama-sama cepat dan tidak menunjukkan kontras. Hal ini baru diketahui setelah diperiksa langsung ke database, bukan sekadar mengandalkan screenshot yang telah ada. Pelajaran yang diperoleh adalah AI mempercepat proses penulisan dan pendokumentasian, tetapi verifikasi terhadap hasil nyata tetap harus dilakukan sendiri sebelum sesuatu dianggap benar.
+AI banyak membantu mempercepat bagian implementasi, yaitu penulisan boilerplate script Python, DDL, dan penyusunan dokumentasi, sehingga waktu dapat lebih difokuskan pada riset endpoint dan pengambilan keputusan desain database. Meskipun demikian, hasil dari AI tetap perlu diverifikasi ke data dan sistem yang sebenarnya, tidak diterima begitu saja. Sebagai contoh konkret, salah satu bukti query optimasi (optimasi 2) yang sempat dianggap selesai ternyata tidak valid setelah diperiksa ulang, karena index pembandingnya telah terpasang lebih dulu dari percobaan sebelumnya sehingga baseline "sebelum" dan "sesudah" sama-sama cepat dan tidak menunjukkan kontras. Hal ini baru diketahui setelah diperiksa langsung ke database, bukan sekadar mengandalkan screenshot yang telah ada. Pelajaran yang diperoleh adalah AI mempercepat proses penulisan dan pendokumentasian, tetapi verifikasi terhadap hasil nyata tetap harus dilakukan sendiri sebelum sesuatu dianggap benar.
 
 ### 4. Detail lain
 
 - Tool AI yang digunakan: **Claude Code**.
-- Perkiraan porsi pekerjaan yang melibatkan AI: sebagian besar penulisan script kode (Python) dan SQL (DDL, query, dan query optimasi), sedangkan seluruh proses desain (ERD dan skema database) serta riset endpoint API dikerjakan secara manual.
+- Pekerjaan yang melibatkan AI: sebagian besar penulisan script kode (Python) dan SQL (DDL), sedangkan seluruh proses desain (ERD dan skema database) serta riset endpoint API dikerjakan secara manual.
 
 ---
 
