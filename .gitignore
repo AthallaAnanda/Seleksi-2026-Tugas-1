@@ -1,0 +1,27 @@
+.venv/
+.venv-airflow/
+__pycache__/
+airflow/dags/__pycache__/
+*.pyc
+.env
+# Data mentah hasil scraping, tidak perlu di-commit
+Data Scraping/raw/
+*.log
+# binary / artefak besar
+*.dump
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+simple_auth_manager_passwords.json.generated
+logs/
+
+# Claude Code (AI tooling) - personal/local, jangan di-commit
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Catatan perencanaan internal, tidak untuk dikumpulkan
+docs/rencana-implementasi.md
+docs/panduan-implementasi.md
+
+# Dump mentah DevTools, bukan bagian dari deliverable
+docs/HailDevToolsPasarDana.txt
