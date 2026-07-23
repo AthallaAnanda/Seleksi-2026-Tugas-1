@@ -23,8 +23,6 @@
 11. [Penggunaan AI](#11-penggunaan-ai)
 12. [Referensi](#12-referensi)
 
-Dokumen ini merupakan README utama untuk submission.
-
 ---
 
 ## 1. Deskripsi Singkat
@@ -58,7 +56,7 @@ Reksa dana Indonesia memiliki struktur data yang kaya akan relasi. Satu Manajer 
 | 5 | Bonus - Automated scheduling Airflow (3 DAG: harian, bulanan, master) | Selesai |
 | 6 | Bonus - 3 query optimasi (index dan materialized view) | Selesai |
 | 7 | Dokumentasi dan artefak visual (ERD, diagram relasional, screenshot, export .sql) | Selesai |
-| 8 | Review akhir dan submission | Belum, tersisa review akhir dan pembuatan pull request |
+| 8 | Review akhir dan submission | Selesai |
 
 ---
 
