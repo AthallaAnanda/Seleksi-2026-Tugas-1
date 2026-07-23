@@ -326,7 +326,7 @@ GROUP BY dc.label
 ORDER BY ann_volatility DESC;
 ```
 
-**Skema (ERD atau star schema):**
+**Skema (Star schema):**
 
 ![ERD/star schema Data Warehouse](Data%20Storing/Data%20Warehouse/design/star_schema.png)
 
