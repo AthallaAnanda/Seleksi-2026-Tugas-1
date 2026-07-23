@@ -28,7 +28,7 @@
 ## 1. Deskripsi Singkat
 
 **Topik:** Data NAV historis, portofolio, dan ekosistem reksa dana Indonesia.
-**Sumber data:** [pasardana.id](https://pasardana.id), diakses melalui endpoint REST internal lewat sesi browser, bukan melalui API publik berkunci.
+**Sumber data:** [pasardana.id](https://pasardana.id), diakses melalui endpoint REST internal lewat sesi browser, bukan melalui API publik.
 **DBMS:** PostgreSQL 16, dijalankan melalui Podman/Docker Compose.
 
 ### Alasan pemilihan topik
