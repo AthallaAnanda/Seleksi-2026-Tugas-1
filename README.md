@@ -58,7 +58,7 @@ Reksa dana Indonesia punya struktur data yang kaya relasi: Manajer Investasi (MI
 | 5 | Bonus - Scheduling Airflow (3 DAG: harian, bulanan, master) | DAG dibuat dan sudah diuji jalan |
 | 6 | Bonus - 3 query optimasi (index/materialized view) | Selesai |
 | 7 | Dokumentasi & artefak visual (ERD, diagram relasional, screenshot, export .sql) | Selesai |
-| 8 | Review akhir & submission | **[ISI: sudah/belum]** |
+| 8 | Review akhir & submission | Belum - tinggal review akhir dan buat pull request |
 
 > Catatan: tabel ini perlu diperbarui manual sebelum submission final, terutama baris 6-8.
 
@@ -268,8 +268,6 @@ Screenshot bukti query `SELECT ... FROM ... WHERE` yang berhasil dijalankan terh
 
 ![Screenshot query 3](Data%20Storing/screenshots/query-3.png)
 
-**[ISI: tambah caption singkat tiap query di atas kalau perlu, misal query apa yang dijalankan]**
-
 ---
 
 ## 9. Bonus
@@ -316,7 +314,6 @@ ORDER BY ann_volatility DESC;
 
 ![Screenshot query Data Warehouse](Data%20Storing/Data%20Warehouse/screenshots/query_1.png)
 
-**[ISI: `Data Storing/Data Warehouse/export/dw_export.sql` masih belum ada - jalankan `pg_dump` sesuai instruksi di `Data Storing/Data Warehouse/export/README.md` sebelum submission]**
 
 ### 9.2 Automated Scheduling
 
@@ -360,8 +357,6 @@ Cara baca hasil ini:
 - Baris `2026-07-20` sampai `2026-07-22` cuma dibuat oleh batch kedua (`batch_mulai` = `batch_selesai` = `09:43:00`) - ini tanggal NAV baru yang belum ada saat batch pertama jalan, jadi murni ditambahkan, bukan ditimpa.
 - Baris `2026-07-17` punya `batch_mulai` (`08:06:30`, dari batch pertama) berbeda dari `batch_selesai` (`09:43:00`, dari batch kedua) - artinya sebagian fund untuk tanggal itu memang sudah masuk di batch pertama, dan batch kedua cuma menambah fund yang sebelumnya belum tercatat (`ON CONFLICT (fund_id, record_date) DO NOTHING`), bukan menduplikasi baris yang sudah ada.
 - `jumlah_fund` per tanggal tidak pernah melonjak dua kali lipat meski DAG sudah dijalankan lebih dari sekali, membuktikan tidak ada redundansi data.
-
-**[ISI: kalau mau, tambahkan screenshot dari query bukti scheduling di atas]**
 
 ### 9.3 Query Optimasi (3 query)
 
@@ -422,13 +417,12 @@ Spesifikasi mewajibkan penjelasan detail bila menggunakan AI dalam pengerjaan tu
 
 ### 3. Refleksi penggunaan AI
 
-**[ISI: tulis refleksi personal, misalnya: bagian mana yang benar-benar menghemat waktu, apakah ada saran/kode dari AI yang ternyata salah atau perlu dikoreksi setelah dicek ke data asli, apa yang dipelajari dari proses membagi kerja desain (manual) vs implementasi (dibantu AI) seperti ini]**
+AI banyak membantu mempercepat bagian implementasi: menulis boilerplate script Python, DDL, query SQL, dan menyusun dokumentasi, sehingga waktu bisa lebih difokuskan ke riset endpoint dan pengambilan keputusan desain database. Tapi hasil dari AI tetap perlu diverifikasi ke data/sistem asli, bukan diterima mentah-mentah. Contoh konkret: salah satu bukti query optimasi (optimasi 2) yang sempat dianggap selesai ternyata tidak valid setelah dicek ulang, karena index pembandingnya sudah kepasang duluan dari percobaan sebelumnya sehingga baseline "sebelum" dan "sesudah" jadi sama-sama cepat dan tidak menunjukkan kontras. Baru ketahuan setelah dicek ulang langsung ke database, bukan cuma percaya pada screenshot yang sudah ada. Pelajarannya: AI mempercepat proses menulis dan mendokumentasikan, tapi verifikasi terhadap hasil nyata tetap harus dilakukan sendiri sebelum dianggap benar.
 
 ### 4. Detail lain
 
-- Tool AI yang dipakai: **[ISI: nama tool/model, misalnya Claude Code]**
-- Perkiraan porsi pekerjaan yang melibatkan AI: **[ISI: mis. sebagian besar implementasi kode dan SQL, sementara seluruh proses desain/riset dikerjakan manual]**
-- **[ISI: detail relevan lainnya bila ada]**
+- Tool AI yang dipakai: **Claude Code**.
+- Perkiraan porsi pekerjaan yang melibatkan AI: sebagian besar penulisan script kode (Python) dan SQL (DDL, query, query optimasi), sementara seluruh proses desain (ERD, skema database) dan riset endpoint API dikerjakan manual.
 
 Catatan: bagian ini **wajib** ada isinya, bukan boleh dikosongkan. Peserta yang terindikasi memakai AI tanpa menuliskan bagian ini akan dikenakan sanksi pengurangan nilai.
 
@@ -442,5 +436,3 @@ Catatan: bagian ini **wajib** ada isinya, bukan boleh dikosongkan. Peserta yang 
 - [psycopg2](https://www.psycopg.org/) untuk koneksi PostgreSQL.
 - PostgreSQL 16, dijalankan lewat Podman/Docker Compose.
 - Apache Airflow untuk automated scheduling (bonus).
-
-**[ISI: tambah referensi lain yang benar-benar dipakai, misal artikel/dokumentasi yang dirujuk saat merancang ERD atau data warehouse]**
